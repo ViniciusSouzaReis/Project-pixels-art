@@ -49,3 +49,6 @@
     height: 40px;
     border: solid black 1px;
 }
+#clear-board {
+    margin: 5px;
+}

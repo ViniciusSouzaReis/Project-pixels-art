@@ -30,3 +30,12 @@ colorPixelClick.addEventListener('click', function(event) {
     const captureColor = window.getComputedStyle(selectedBackgroundColor, null).getPropertyValue('background-color');
     event.target.style.backgroundColor = captureColor;
 }) 
+
+const clearButtom = document.getElementById('clear-board');
+clearButtom.addEventListener('click', clearSquad);
+function clearSquad() {
+    const divPixel = document.getElementsByClassName('pixel');
+    for (let i = 0; i < divPixel.length; i += 1) {
+        divPixel[i].style.backgroundColor = 'white';
+    }
+}
