@@ -26,9 +26,7 @@ colorPalletClick.addEventListener('click', function(event) {
 
 const colorPixelClick = document.querySelector('.grid');
 colorPixelClick.addEventListener('click', function(event) {
-    if (event.target.classList.contains('pixel')) {
-        const selectedBackgroundColor = document.querySelector('.selected');
-        const captureColor = window.getComputedStyle(selectedBackgroundColor, null).getPropertyValue('background-color');
-        event.target.style.backgroundColor = captureColor;
-    }
-})
+    const selectedBackgroundColor = document.querySelector('.selected');
+    const captureColor = window.getComputedStyle(selectedBackgroundColor, null).getPropertyValue('background-color');
+    event.target.style.backgroundColor = captureColor;
+}) 
