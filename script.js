@@ -1,4 +1,4 @@
-let createClassPixels = document.querySelector('.grid');
+const createClassPixels = document.querySelector('.grid');
 function createClassePixel() {
   for (let i = 0; i < 25; i += 1) {
     const createNewDiv = document.createElement('div');
@@ -8,3 +8,18 @@ function createClassePixel() {
   }
 }
 createClassePixel();
+
+function createClassSelected() {
+  const createClassSelect = document.querySelector('.color');
+  createClassSelect.className += ' selected';
+}
+createClassSelected();
+
+const colorPalletClick = document.getElementById('color-palette');
+colorPalletClick.addEventListener('click', function(event) {
+    const selected = document.querySelector('.selected');
+    selected.className = 'color';
+    if (event.target.className === 'color') {
+        event.target.className = 'color selected';
+    }
+})
