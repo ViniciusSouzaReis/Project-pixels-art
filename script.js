@@ -108,6 +108,21 @@ function popAlert() {
         document.getElementById('board-size').value = 5;
     }
 }
+const secondColor = document.getElementById('color-red');
+const thirdColor = document.getElementById('color-blue');
+const fourthColor = document.getElementById('color-green');
+
+function createColor() {
+    let r = Math.floor(Math.random() * 256 + 1);
+    let g = Math.floor(Math.random() * 256 + 1);
+    let b = Math.floor(Math.random() * 256 + 1);
+    let rgb = `rgb(${r},${g},${b})`;
+    return rgb;
+}
+secondColor.style.backgroundColor = createColor();
+thirdColor.style.backgroundColor = createColor();
+fourthColor.style.backgroundColor = createColor();
+
 btnClick.addEventListener('click', popAlert);
 btnClick.addEventListener('click', clearBoard);
 btnClick.addEventListener('click', createClasseGrid);
