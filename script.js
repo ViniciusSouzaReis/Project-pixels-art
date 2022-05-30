@@ -4,67 +4,51 @@ const removeClassPixels = document.querySelectorAll('.grid');
 const pixelBoardFixed = document.getElementById('pixel-board');
 const btnClick = document.getElementById('generate-board');
 function createClasseGridStart() {
-    for (let i = 0; i < 5; i += 1) {
-      const createNewDiv = document.createElement('div');
-      createNewDiv.className = 'grid';
-      pixelBoardFixed.appendChild(createNewDiv)
-    }
+  for (let i = 0; i < 5; i += 1) {
+    const createNewDiv = document.createElement('div');
+    createNewDiv.className = 'grid';
+    pixelBoardFixed.appendChild(createNewDiv);
   }
+}
 createClasseGridStart();
 
 function createClassePixelStart() {
-    for (let index = 0; index < 5; index += 1) {
-        for (let index2 = 0; index2 < 5; index2 +=1) {
-            const getGrid = document.querySelectorAll('.grid');
-            const createDivPixel = document.createElement('div');
-            createDivPixel.className = 'pixel';
-            createDivPixel.style.backgroundColor = 'white';
-            getGrid[index].appendChild(createDivPixel);
-        }
+  for (let index = 0; index < 5; index += 1) {
+    for (let index2 = 0; index2 < 5; index2 += 1) {
+      const getGrid = document.querySelectorAll('.grid');
+      const createDivPixel = document.createElement('div');
+      createDivPixel.className = 'pixel';
+      createDivPixel.style.backgroundColor = 'white';
+      getGrid[index].appendChild(createDivPixel);
     }
+  }
 }
 createClassePixelStart();
 
-
 function clearBoard() {
-    pixelBoardFixed.remove();
+  pixelBoardFixed.remove();
 }
-
 
 function createClasseGrid() {
-    const createDivBoard = document.createElement('div');
-    createDivBoard.id = 'pixel-board';
-    createDivBody.appendChild(createDivBoard);
-    for (let i = 0; i < document.getElementById('board-size').value; i += 1) {
-        const pixelBoard = document.getElementById('pixel-board');
-        const createNewDiv = document.createElement('div');
-        createNewDiv.className = 'grid';
-        pixelBoard.appendChild(createNewDiv)
+  const createDivBoard = document.createElement('div');
+  createDivBoard.id = 'pixel-board';
+  createDivBody.appendChild(createDivBoard);
+  for (let i = 0; i < document.getElementById('board-size').value; i += 1) {
+    const pixelBoard = document.getElementById('pixel-board');
+    const createNewDiv = document.createElement('div');
+    createNewDiv.className = 'grid';
+    pixelBoard.appendChild(createNewDiv)
+  }
+  for (let index2 = 0; index2 < document.getElementById('board-size').value; index2 += 1) {
+    for (let index = 0; index < document.getElementById('board-size').value; index += 1) {
+      const getGrid = document.querySelectorAll('.grid');
+      const createDivPixel = document.createElement('div');
+      createDivPixel.className = 'pixel';
+      createDivPixel.style.backgroundColor = 'white';
+      getGrid[index].appendChild(createDivPixel);
     }
-    for (let index2 = 0; index2 < document.getElementById('board-size').value; index2 += 1) {
-        for (let index = 0; index < document.getElementById('board-size').value; index += 1) {
-            const getGrid = document.querySelectorAll('.grid');
-            const createDivPixel = document.createElement('div');
-            createDivPixel.className = 'pixel';
-            createDivPixel.style.backgroundColor = 'white';
-            getGrid[index].appendChild(createDivPixel);
-        }
-    }
+  }
 }
-
-
-// btnClick.addEventListener('click', createClassePixel);
-// function createClassePixel() {
-//     for (let index = 0; index < document.getElementById('board-size').value; index += 1) {
-//         for (let index2 = 0; index2 < (document.getElementById('board-size').value - 5); index2 += 1) {
-//             const getGrid = document.querySelectorAll('.grid');
-//             const createDivPixel = document.createElement('div');
-//             createDivPixel.className = 'pixel';
-//             createDivPixel.style.backgroundColor = 'white';
-//             getGrid[index].appendChild(createDivPixel);
-//         }
-//     }
-// }
 
 function createClassSelected() {
   const createClassSelect = document.querySelector('.color');
@@ -90,34 +74,34 @@ colorPixelClick.addEventListener('click', function(event) {
 
 const clearButtom = document.getElementById('clear-board');
 function clearSquad() {
-    const divPixel = document.getElementsByClassName('pixel');
-    for (let i = 0; i < divPixel.length; i += 1) {
-        divPixel[i].style.backgroundColor = 'white';
-    }
+  const divPixel = document.getElementsByClassName('pixel');
+  for (let i = 0; i < divPixel.length; i += 1) {
+    divPixel[i].style.backgroundColor = 'white';
+  }
 }
 
 let boardSize = document.getElementById('board-size').value;
 function popAlert() {
-    if (document.getElementById('board-size').value === '') {
-        alert('Board inválido!');
-    }
-    if (document.getElementById('board-size').value > 50) {
-        document.getElementById('board-size').value = 50;
-    }
-    if (document.getElementById('board-size').value < 5) {
-        document.getElementById('board-size').value = 5;
-    }
+  if (document.getElementById('board-size').value === '') {
+    alert('Board inválido!');
+  }
+  if (document.getElementById('board-size').value > 50) {
+    document.getElementById('board-size').value = 50;
+  }
+  if (document.getElementById('board-size').value < 5) {
+    document.getElementById('board-size').value = 5;
+  }
 }
 const secondColor = document.getElementById('color-red');
 const thirdColor = document.getElementById('color-blue');
 const fourthColor = document.getElementById('color-green');
 
 function createColor() {
-    let r = Math.floor(Math.random() * 256 + 1);
-    let g = Math.floor(Math.random() * 256 + 1);
-    let b = Math.floor(Math.random() * 256 + 1);
-    let rgb = `rgb(${r},${g},${b})`;
-    return rgb;
+  const r = Math.floor(Math.random() * 256 + 1);
+  const g = Math.floor(Math.random() * 256 + 1);
+  const b = Math.floor(Math.random() * 256 + 1);
+  const rgb = `rgb(${r},${g},${b})`;
+  return rgb;
 }
 secondColor.style.backgroundColor = createColor();
 thirdColor.style.backgroundColor = createColor();
