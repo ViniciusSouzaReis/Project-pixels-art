@@ -37,7 +37,7 @@ function createClasseGrid() {
     const pixelBoard = document.getElementById('pixel-board');
     const createNewDiv = document.createElement('div');
     createNewDiv.className = 'grid';
-    pixelBoard.appendChild(createNewDiv)
+    pixelBoard.appendChild(createNewDiv);
   }
   for (let index2 = 0; index2 < document.getElementById('board-size').value; index2 += 1) {
     for (let index = 0; index < document.getElementById('board-size').value; index += 1) {
@@ -58,19 +58,19 @@ createClassSelected();
 
 const colorPalletClick = document.getElementById('color-palette');
 colorPalletClick.addEventListener('click', function(event) {
-    const selected = document.querySelector('.selected');
-    selected.className = 'color';
-    if (event.target.className === 'color') {
-        event.target.className = 'color selected';
-    }
+  const selected = document.querySelector('.selected');
+  selected.className = 'color';
+  if (event.target.className === 'color') {
+    event.target.className = 'color selected';
+  }
 })
 
 const colorPixelClick = document.querySelector('#pixel-board');
 colorPixelClick.addEventListener('click', function(event) {
-    const selectedBackgroundColor = document.querySelector('.selected');
-    const captureColor = window.getComputedStyle(selectedBackgroundColor, null).getPropertyValue('background-color');
-    event.target.style.backgroundColor = captureColor;
-}) 
+  const selectedBackgroundColor = document.querySelector('.selected');
+  const captureColor = window.getComputedStyle(selectedBackgroundColor, null).getPropertyValue('background-color');
+  event.target.style.backgroundColor = captureColor;
+})
 
 const clearButtom = document.getElementById('clear-board');
 function clearSquad() {
